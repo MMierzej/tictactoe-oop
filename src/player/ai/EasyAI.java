@@ -2,6 +2,8 @@ package player.ai;
 
 import java.util.Random;
 
+import board.Board;
+
 public class EasyAI extends AI {
     private Random rand;
 
@@ -11,7 +13,7 @@ public class EasyAI extends AI {
     }
 
     @Override
-    public int[] chooseCoordinates(char[][] board) {
+    public int[] chooseCoordinates(Board board) {
         moveMessage();
 
         int[] coords = new int[2];

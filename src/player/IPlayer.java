@@ -1,6 +1,8 @@
 package player;
 
+import board.Board;
+
 public interface IPlayer {
-    int[] chooseCoordinates(char[][] board);
+    int[] chooseCoordinates(Board board);
     char getPlayerChar();
 }

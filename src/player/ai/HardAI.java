@@ -1,5 +1,7 @@
 package player.ai;
 
+import board.Board;
+
 public class HardAI extends AI {
     private boolean maximizing;
     
@@ -9,7 +11,7 @@ public class HardAI extends AI {
     }
 
     @Override
-    public int[] chooseCoordinates(char[][] board) {
+    public int[] chooseCoordinates(Board board) {
         moveMessage();
 
         int[] coords = new int[2];

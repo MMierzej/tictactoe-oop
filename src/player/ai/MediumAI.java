@@ -1,6 +1,7 @@
 package player.ai;
 
 import java.util.Random;
+import board.Board;
 
 public class MediumAI extends AI {
     private boolean maximizing;
@@ -12,7 +13,7 @@ public class MediumAI extends AI {
     }
 
     @Override
-    public int[] chooseCoordinates(char[][] board) {
+    public int[] chooseCoordinates(Board board) {
         moveMessage();
 
         int[] coords = new int[2];
