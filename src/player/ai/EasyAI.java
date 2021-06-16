@@ -25,7 +25,7 @@ public class EasyAI extends AI {
     public int[] chooseCoordinates(Board board) {
         moveMessage();
         int[] coords = new int[2];
-
+        
         coords[0] = rand.nextInt(3);
         coords[1] = rand.nextInt(3);
 
