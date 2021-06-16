@@ -1,9 +1,9 @@
 # tictactoe-po
 
-#### Konsolowa implementacja klasycznej gry *Kółko i krzyżyk*.
+### Konsolowa implementacja klasycznej gry *Kółko i krzyżyk*.
 
-##### Autor: Marcin Mierzejewski
-##### Język: Java
+#### Autor: Marcin Mierzejewski
+#### Język: Java
 
 ## Opis projektu
 
