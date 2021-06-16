@@ -8,13 +8,13 @@ import board.Board;
  * do remisu, a w najlepszym - do wygranej.
  */
 public class HardAI extends AI {
-    /**
-     * Wartość używana w algorytmie minimax.
-     * Przechowuje informację o tym, w jaki sposób
-     * dany obiekt chce wpłynąć na wynik.
-     */
-    private boolean maximizing;
-    
+    // /**
+    //  * Wartość używana w algorytmie minimax.
+    //  * Przechowuje informację o tym, w jaki sposób
+    //  * dany obiekt chce wpłynąć na wynik.
+    //  */
+    // private boolean maximizing;
+
     /**
      * Konstruktor obiektu sztucznej inteligencji o wysokim poziomie trudności.
      * @param c znak gracza.
