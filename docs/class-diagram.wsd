@@ -62,7 +62,7 @@ Player <|-- AI
 AI <|-- EasyAI
 AI <|-- MediumAI
 AI <|-- HardAI
-Main *-- IPlayer
-Main *-- Board
+Main "2" o-- "*" IPlayer
+Main "1" o-- "*" Board
 
 @enduml
