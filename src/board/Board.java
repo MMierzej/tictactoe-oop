@@ -51,12 +51,10 @@ public class Board {
      * @param c wartość pola.
      * @return true, jeśli pole było wolne. W przeciwnym przypadku: false.
      */
-    public boolean setAtCoords(int x, int y, char c) {
-        if (isFree(x, y)) {
-            free--;
-            board[x][y] = c;
-            return true;
-        } else return false;
+    public void setAtCoords(int x, int y, char c) {
+        if ( isFree(x, y) && c != ' ') free--;
+        if (!isFree(x, y) && c == ' ') free++;
+        board[x][y] = c;
     }
 
     /**

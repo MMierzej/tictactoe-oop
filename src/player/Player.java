@@ -15,9 +15,7 @@ public abstract class Player {
      * @param c znak gracza, który identyfikuje go na planszy.
      */
     public Player(char c) {
-        if (c == 'X' || c == 'O')
-            playerChar = c;
-        else playerChar = '-';
+        playerChar = c;
     }
 
     /**

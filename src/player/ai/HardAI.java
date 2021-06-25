@@ -8,13 +8,6 @@ import board.Board;
  * do remisu, a w najlepszym - do wygranej.
  */
 public class HardAI extends AI {
-    // /**
-    //  * Wartość używana w algorytmie minimax.
-    //  * Przechowuje informację o tym, w jaki sposób
-    //  * dany obiekt chce wpłynąć na wynik.
-    //  */
-    // private boolean maximizing;
-
     /**
      * Konstruktor obiektu sztucznej inteligencji o wysokim poziomie trudności.
      * @param c znak gracza.
@@ -29,8 +22,34 @@ public class HardAI extends AI {
     public int[] chooseCoordinates(Board board) {
         moveMessage();
 
-        int[] coords = new int[2];
+        int result;
+        int max = -2;
+        int min =  2;
+        int[] maxCoords = new int[2];
+        int[] minCoords = new int[2];
 
-        return coords;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board.isFree(i, j)) {
+                    board.setAtCoords(i, j, getPlayerChar());
+                    result = minimax(board, !maximizing, 9);
+                    board.setAtCoords(i, j, ' ');
+
+                    if (max < result) {
+                        max = result;
+                        maxCoords[0] = i;
+                        maxCoords[1] = j;
+                    }
+
+                    if (min > result) {
+                        min = result;
+                        minCoords[0] = i;
+                        minCoords[1] = j;
+                    }
+                }
+            }
+        }
+
+        return maximizing ? maxCoords : minCoords;
     }
 }
