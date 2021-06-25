@@ -27,7 +27,7 @@ public abstract class AI extends player.Player {
      * Wiadomość wysyłana przed wykonaniem ruchu.
      */
     public void moveMessage() {
-        System.out.printf("Making move, level: %s.%n", difficulty);
+        System.out.printf("%c making move, level: %s.%n", this.getPlayerChar(), difficulty);
     }
 
     /**
