@@ -41,7 +41,6 @@ public class User extends Player {
 
             if (coords[1] < 0 || coords[1] > 2 || coords[0] < 0 || coords[0] > 2) {
                 System.out.println("Coordinates should be from 1 to 3!");
-                // continue;
             } else if (board.isFree(coords[0], coords[1])) {
                 return coords;
             } else 

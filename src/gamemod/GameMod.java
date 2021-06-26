@@ -28,7 +28,7 @@ public class GameMod {
     private Scanner scan;
 
     /**
-     * Konstruktor moderatora.
+     * Konstruktor moderatora gry.
      */
     public GameMod() {
         board = new Board();
@@ -47,25 +47,31 @@ public class GameMod {
             char winner;
 
             while (true) {
-                System.out.print("Input command: ");
+                System.out.println("Players:  [user/easy/medium/hard]");
+                System.out.println("Commands: [replay/exit]");
+                System.out.print("Input: ");
                 input = scan.nextLine().trim().split("\\s+");
 
                 if (input.length == 1 && input[0].equals("exit"))
                     break gameLoop;
 
                 if (input.length == 1 && input[0].equals("replay"))
-                    break;
+                    if (players[0] == null) {
+                        System.out.println("No game to replay.");
+                        System.out.println();
+                        continue;
+                    } else break;
 
-                if (input.length == 3) {
-                    if (input[0].equals("play")
-                            && (input[1].equals("easy") || input[1].equals("user") || input[1].equals("medium") || input[1].equals("hard"))
-                            && (input[2].equals("easy") || input[2].equals("user") || input[2].equals("medium") || input[2].equals("hard"))) {
+                if (input.length == 2) {
+                    if ((input[0].equals("easy") || input[0].equals("user") || input[0].equals("medium") || input[0].equals("hard"))
+                            && (input[1].equals("easy") || input[1].equals("user") || input[1].equals("medium") || input[1].equals("hard"))) {
                         initPlayers(input);
                         break;
                     }
                 }
 
                 System.out.println("Bad parameters!");
+                System.out.println();
             }
 
             while (true) {
@@ -74,8 +80,8 @@ public class GameMod {
                 winner = board.getWinner();
 
                 if (!(winner == ' ')) {
-                    if (winner == '-') System.out.printf("It's a draw!%n");
-                    else System.out.printf("%c wins!%n", winner);
+                    if (winner == '-') System.out.printf("It's a draw!%n%n");
+                    else System.out.printf("%c wins!%n%n", winner);
                     break;
                 }
 
@@ -96,7 +102,7 @@ public class GameMod {
      * @param input wejście z informacją o trybie gry.
      */
     private void initPlayers(String[] input) {
-        switch (input[1]) {
+        switch (input[0]) {
             case "user":
                 players[0] = new User('X');
                 break;
@@ -111,7 +117,7 @@ public class GameMod {
                 break;
         }
 
-        switch (input[2]) {
+        switch (input[1]) {
             case "user":
                 players[1] = new User('O');
                 break;
