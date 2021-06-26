@@ -1,4 +1,9 @@
 @startuml tictactoe
+
+class Main {
+	+ main()
+}
+
 abstract class AI {
 	- difficulty : String
 	# maximizing : boolean
@@ -26,21 +31,28 @@ class HardAI {
 
 class Board {
 	- board : char
+	- free: int
+	+ Board()
 	+ isFree()
+	+ getAtCoords()
+	+ setAtCoords()
 	+ getWinner()
 	+ reset()
 	+ printBoard()
 }
 
-class Main {
+class GameMod {
 	- turn : int
 	- board : Board
-	- players : IPlayer
-	+ main()
+	- players : Player
+	- scan : Scanner
+	+ GameMod()
+	+ runGame()
 	- initPlayers()
 }
 
 class User {
+	- scan : Scanner
 	+ User()
 	+ chooseCoordinates()
 }
@@ -48,21 +60,17 @@ class User {
 abstract class Player {
 	- playerChar : char
 	+ Player()
-	+ getPlayerChar()
-}
-
-interface IPlayer {
 	+ chooseCoordinates()
 	+ getPlayerChar()
 }
 
-IPlayer <|-- Player
 Player <|-- User
 Player <|-- AI
 AI <|-- EasyAI
 AI <|-- MediumAI
 AI <|-- HardAI
-Main "2" o-- "*" IPlayer
-Main "1" o-- "*" Board
+GameMod "2" o-- "*" Player
+GameMod "1" o-- "*" Board
+Main <.. GameMod
 
 @enduml

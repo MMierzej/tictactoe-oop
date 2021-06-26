@@ -11,7 +11,7 @@ public class User extends Player {
     /**
      * Pozwala pobrać wejście od użytkownika.
      */
-    Scanner scan;
+    private Scanner scan;
 
     /**
      * Konstruktor obiektu gracza-użytkownika.
