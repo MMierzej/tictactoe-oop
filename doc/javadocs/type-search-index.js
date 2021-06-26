@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"player.ai","l":"AI"},{"l":"All Classes","u":"allclasses-index.html"},{"p":"board","l":"Board"},{"p":"player.ai","l":"EasyAI"},{"p":"gamemod","l":"GameMod"},{"p":"player.ai","l":"HardAI"},{"p":"player.ai","l":"MediumAI"},{"p":"player","l":"Player"},{"p":"player","l":"User"}];updateSearchResults();

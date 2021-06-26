@@ -29,7 +29,9 @@ public class Board {
     }
 
     /**
-     * @return true, jeśli pole o współrzędnych (x, y) jest puste; false w p.p.
+     * @param x numer wiersza.
+     * @param y numer kolumny.
+     * @return true: pole o współrzędnych (x, y) jest puste, false: w p.p.
      */
     public boolean isFree(int x, int y) {
         return board[x][y] == ' ';
@@ -49,7 +51,6 @@ public class Board {
      * @param x numer wiersza.
      * @param y numer kolumny.
      * @param c wartość pola.
-     * @return true, jeśli pole było wolne. W przeciwnym przypadku: false.
      */
     public void setAtCoords(int x, int y, char c) {
         if ( isFree(x, y) && c != ' ') free--;
