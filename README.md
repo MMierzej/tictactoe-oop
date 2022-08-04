@@ -1,4 +1,4 @@
-# tictactoe-po
+# tictactoe-oop
 
 ### Konsolowa implementacja klasycznej gry *Kółko i krzyżyk*.
 
@@ -19,4 +19,4 @@ Komputer nie daje się ograć tak łatwo - generalnie wykonuje ruchy losowo, nat
 
 #### Trudny
 
-Komputer korzysta z algorytmu *minimax*, który pozwala mu w każdej partii na wygraną lub w najgorszym przypadku remis.
+Komputer korzysta z algorytmu *Minimax*, który pozwala mu w każdej partii na wygraną lub w najgorszym przypadku - remis.
